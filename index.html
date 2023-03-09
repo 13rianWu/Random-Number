@@ -5,22 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Number</title>
+    <script>
+        function gen(){
+            var str = ''
+            var min = parseInt(document.getElementById("min").value);
+            var max = parseInt(document.getElementById("max").value);
+            var quantity = document.getElementById("quantity").value;
+            for (var i = 0; i < quantity; i++){
+                var res = Math.floor(Math.random() * max) + min;
+                let show = document.querySelector('.result')
+                str = str + res + '  ' ;
+                show.setAttribute('value',str)
+            }
+        }
+    </script>
 </head>
 <body>
-    <div>
+    <div class="header">
         <h1 style="text-align: center;">隨機數字產生器 Random Number Generator</h1>
     </div>
-    <div style="margin: 0 30%;">
-        最小值:
-        <input style="width: 100px;" type="text" id="min" placeholder="ex:0">
-        最大值:
-        <input style="width: 100px;" type="text" id="max" placeholder="ex:100">
-        取幾個數字:
-        <input style="width: 100px;" type="text" id="quantity" placeholder="ex:5">
+    <div class="body">
+        <div style="margin: 0 35%;">
+            最小值:
+            <input style="width: 100px;" type="text" id="min" placeholder="ex:0">
+            最大值:
+            <input style="width: 100px;" type="text" id="max" placeholder="ex:100">
+            取幾個數字:
+            <input style="width: 100px;" type="text" id="quantity" placeholder="ex:5">
+        </div>
+        <div>
+            <button onclick="gen()" style="height: 35px; width: 150px; margin: 20px 45%;">產生數字</button>
+        </div>
+        <div style="margin: 0 35%;">
+            <input class="result" value="" type="text" readonly></input> 
+        </div>
     </div>
-    <div>
-        <input style="height: 35px; width: 150px; margin: 20px 45%;" type="button" value="產生數字">
-    </div>
-    
 </body>
 </html>
