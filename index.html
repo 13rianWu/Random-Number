@@ -7,15 +7,17 @@
     <title>Random Number</title>
     <script>
         function gen(){
-            var str = ''
             var min = parseInt(document.getElementById("min").value);
             var max = parseInt(document.getElementById("max").value);
             var quantity = document.getElementById("quantity").value;
+            var result = document.getElementById("result");
             for (var i = 0; i < quantity; i++){
                 var res = Math.floor(Math.random() * max) + min;
-                let show = document.querySelector('.result')
-                str = str + res + '  ' ;
-                show.setAttribute('value',str)
+                var div = document.createElement("div");
+                var txt = document.createElement("label");
+                txt.textContent = res ;
+                div.appendChild(txt);
+                result.appendChild(div);
             }
         }
     </script>
@@ -36,9 +38,7 @@
         <div>
             <button onclick="gen()" style="height: 35px; width: 150px; margin: 20px 45%;">產生數字</button>
         </div>
-        <div style="margin: 0 35%;">
-            <input class="result" value="" type="text" readonly></input> 
-        </div>
+        <div id="result" style="margin: 0 35%;"></div>
     </div>
 </body>
 </html>
