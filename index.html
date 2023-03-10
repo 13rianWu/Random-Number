@@ -7,14 +7,19 @@
     <title>Random Number</title>
     <script>
         function gen(){
-            var min = parseInt(document.getElementById("min").value);
-            var max = parseInt(document.getElementById("max").value);
-            var quantity = document.getElementById("quantity").value;
-            var result = document.getElementById("result");
-            for (var i = 0; i < quantity; i++){
-                var res = Math.floor(Math.random() * max) + min;
-                var div = document.createElement("div");
-                var txt = document.createElement("label");
+            let child = document.getElementById("result");
+            while (child.firstChild){
+                child.removeChild(child.firstChild);
+            }
+            let min = parseInt(document.getElementById("min").value);
+            let max = parseInt(document.getElementById("max").value);
+            let quantity = document.getElementById("quantity").value;
+            let result = document.getElementById("result");
+            for (let i = 0; i < quantity; i++){
+                let res = Math.floor(Math.random() * max) + min;
+                let div = document.createElement("div");
+                div.setAttribute('name','new');
+                let txt = document.createElement("label");
                 txt.textContent = res ;
                 div.appendChild(txt);
                 result.appendChild(div);
