@@ -1,6 +1,3 @@
-p{
-    color: red;
-}
 .title{
     text-align: center;
     font-size: 40px;
@@ -13,17 +10,17 @@ p{
     height: 35px; 
     width: 150px; 
     margin: 20px 45%;
-    background-color: #4CAF50;
+    background-color: black;
     border: 0px;
     border-radius: 8px;
     color: white;
     font-size: 16px;
 }
 .buttonGen:hover{
-    background-color: #3a833c;
+    background-color: rgb(49, 49, 49);
 }
 .buttonGen:active{
-    background-color: #214b22;
+    background-color: gray;
 }
 .box{
     margin: 0 35%;
