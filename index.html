@@ -5,49 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Number</title>
-    <script>
-        function gen(){
-            let child = document.getElementById("result");
-            let min = parseInt(document.getElementById("min").value);
-            let max = parseInt(document.getElementById("max").value);
-            let quantity = parseInt(document.getElementById("quantity").value);
-            let result = document.getElementById("result");
-            while (child.firstChild){
-                child.removeChild(child.firstChild);
-            }
-            if ( min > max || isNaN(min) || isNaN(max) || isNaN(quantity) ){
-                alert('請輸入正確的數字');
-                return
-            }
-            for (let i = 0; i < quantity; i++){
-                let res = Math.floor(Math.random()*(max-min+1))+min;
-                let div = document.createElement("div");
-                div.style.margin = "0px 0px 5px 0px";
-                let txt = document.createElement("label");
-                txt.textContent = res ;
-                div.appendChild(txt);
-                result.appendChild(div);
-            }
-        }
-    </script>
+    <script src="func.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
     <div class="header">
-        <h1 style="text-align: center;">隨機數字產生器 Random Number Generator</h1>
+        <h1 class="title">隨機數字產生器 Random Number Generator</h1>
     </div>
     <div class="body">
-        <div style="margin: 0 35%;">
+        <div class="box">
             最小值:
-            <input style="width: 100px;" type="text" id="min" placeholder="ex:0">
+            <input class="inputfield" type="text" id="min" placeholder="ex:0">
             最大值:
-            <input style="width: 100px;" type="text" id="max" placeholder="ex:100">
+            <input class="inputfield" type="text" id="max" placeholder="ex:100">
             取幾個數字:
-            <input onkeyup="value=value.replace(/[^\d]/g,'')" style="width: 100px;" type="text" id="quantity" placeholder="ex:5">
+            <input class="inputfield" onkeyup="value=value.replace(/[^\d]/g,'')" type="text" id="quantity" placeholder="ex:5">
         </div>
         <div>
-            <button onclick="gen()" style="height: 35px; width: 150px; margin: 20px 45%;">產生數字</button>
+            <button class="buttonGen" onclick="gen()">產生數字</button>
         </div>
-        <div id="result" style="margin: 0 35%;"></div>
+        <div class="box" id="result"></div>
     </div>
 </body>
 </html>
